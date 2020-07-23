@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greensight</title>
+  <link rel="stylesheet" type="text/css" href="build/css/style.min.css"> 
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<103cd239-14f3-4f77-b24c-8406b7261478>&lang=ru_RU" type="text/javascript"></script>
+   
+  
+</head>
+<body>
+  <div class="container">
+    <h1 class="" method="post" action="#" autocomplete="off">Выберите способ доставки</h1>
+
+    <form  class="order-form" method="post" action="#" autocomplete="off" name="orderForm">
+      <div class="order-form__inner-container">
+
+        <input class="order-form__delivery" type="radio" id="delivery-tab" name="tab">
+        <label for="delivery-tab">Доставка</label>
+
+        <div class="order-form__block_delivery">
+         
+          <label for="username">ФИО</label>
+          <input type="text" id="username" placeholder="Только кириллица">
+
+          <label for="phone">Телефон</label>
+          <input type="text" id="phone">
+
+          <label for="adress">Адрес доставки</label>
+          <input type="text" id="adress" placeholder="Город, улица, дом">
+
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment"></textarea>
+        </div>
+
+        <input class="order-form__pickup" type="radio" id="pickup-tab" name="tab">
+        <label for="pickup-tab">Самовывоз</label>
+
+        <div class="order-form__block_pickup">
+          <input type="radio" name="adress">
+          <label>Пункт выдачи заказов Песчаная ул., д. 13</label>
+
+          <input type="radio" name="adress">
+          <label>Пункт выдачи заказов Подсосенский пер., д. 11</label>
+
+          <div id="map"></div>
+        </div>
+        <button type="sybmit">Оформить заказ</button>
+      </div>
+   
+      <div class="order-form__block_pickup"></div>
+
+    </form>
+  </div>
+  <script type="text/javascript" src="build/js/icon_customImage.min.js"></script>
+  <!-- <script src='build/js/script.min.js'></script> -->
+</body>
+</html>
