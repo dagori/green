@@ -5,55 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Greensight</title>
   <link rel="stylesheet" type="text/css" href="build/css/style.min.css"> 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=<103cd239-14f3-4f77-b24c-8406b7261478>&lang=ru_RU" type="text/javascript"></script>
-   
-  
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=103cd239-14f3-4f77-b24c-8406b7261478&lang=ru_RU"></script>
+  <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1 class="" method="post" action="#" autocomplete="off">Выберите способ доставки</h1>
+    <form class="order-form" method="post" action="#" autocomplete="off" name="orderForm">
+      <h2 class="order-form__title">Выберите способ доставки</h2>
 
-    <form  class="order-form" method="post" action="#" autocomplete="off" name="orderForm">
       <div class="order-form__inner-container">
+        <input class="order-form__input order-form__input_delivery" type="radio" id="tab-delivery" name="tab" checked>
+        <label class="order-form__tab order-form__label_delivery" for="tab-delivery">Доставка</label>
+        <input class="order-form__input order-form__input_pickup" type="radio" id="tab-pickup" name="tab">
+        <label class="order-form__tab order-form__label_pickup" for="tab-pickup">Самовывоз</label>
 
-        <input class="order-form__delivery" type="radio" id="delivery-tab" name="tab">
-        <label for="delivery-tab">Доставка</label>
-
-        <div class="order-form__block_delivery">
-         
-          <label for="username">ФИО</label>
-          <input type="text" id="username" placeholder="Только кириллица">
-
-          <label for="phone">Телефон</label>
-          <input type="text" id="phone">
-
-          <label for="adress">Адрес доставки</label>
-          <input type="text" id="adress" placeholder="Город, улица, дом">
-
-          <label for="comment">Комментарий</label>
-          <textarea id="comment" name="comment"></textarea>
+        <div class="order-form__block order-form__block_delivery delivery">
+          <div class="delivery__container">
+            <label class="delivery__label delivery__label_name" for="name"><span>ФИО</span>
+              <input class="delivery__field delivery__field_name" type="text" id="name" placeholder="Только кириллица">
+            </label>
+            
+            <label class="delivery__label delivery__label_phone" for="phone"><span>Телефон</span>
+              <input class="delivery__field delivery__field_phone" type="text" id="phone" placeholder="Телефон">
+            </label>
+          </div>
+          
+          <label class="delivery__label delivery__label_adress" for="adress"><span>Адрес доставки</span>
+            <input class="delivery__field delivery__field_adress" type="text" id="adress" placeholder="Город, улица, дом">
+          </label>
+          
+          <label class="delivery__label delivery__label_comment" for="comment"><span>Комментарий</span>
+            <textarea  class="delivery__field delivery__field_comment" id="comment" name="comment"></textarea>
+          </label>
         </div>
 
-        <input class="order-form__pickup" type="radio" id="pickup-tab" name="tab">
-        <label for="pickup-tab">Самовывоз</label>
+        <div class="order-form__block order-form__block_pickup pickup">
+          <div class="pickup__container">
+            <label class="pickup__label" for="adress-1">
+              <input class="pickup__radio" type="radio" name="adress" id="adress-1" value="Песчаная ул., д. 13">
+              <span>Пункт выдачи заказов Песчаная ул., д. 13</span>
+            </label>
 
-        <div class="order-form__block_pickup">
-          <input type="radio" name="adress">
-          <label>Пункт выдачи заказов Песчаная ул., д. 13</label>
-
-          <input type="radio" name="adress">
-          <label>Пункт выдачи заказов Подсосенский пер., д. 11</label>
-
-          <div id="map"></div>
+            <label class="pickup__label" for="adress-2">
+              <input class="pickup__radio" type="radio" name="adress" id="adress-2" value="Подсосенский пер., д. 11">
+              <span>Пункт выдачи заказов Подсосенский пер., д. 11</span>
+            </label>
+          </div>
+          <div class="pickup__map" id="map"></div>
         </div>
-        <button type="sybmit">Оформить заказ</button>
+        <button class="order-form__submit button" type="submit">Оформить заказ</button>
       </div>
-   
-      <div class="order-form__block_pickup"></div>
-
     </form>
   </div>
-  <script type="text/javascript" src="build/js/icon_customImage.min.js"></script>
+  <script src="build/js/icon_customImage.min.js"></script>
   <!-- <script src='build/js/script.min.js'></script> -->
 </body>
 </html>
+
